@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; /* Full viewport height */
+            color: white;
+            transition: background 0.5s ease; /* Smooth background change */
+        }
+        .datetime-banner {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 18px;
+            z-index: 1000; /* Ensure it stays on top */
+        }
+        
+        
+        .shortcut-icons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px; /* Add space between the icons and the search fields */
+        }
+        .shortcut-icons a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .shortcut-icons a:hover {
+            transform: scale(1.1);
+        }
+        .shortcut-icons img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        form {
+            margin: 10px;
+        }
+        input {
+            padding: 10px;
+            margin-right: 5px;
+            font-size: 16px;
+            border-radius: 10px; /* Add rounded corners */
+            border: 1px solid #ccc; /* Optional: border for the input field */
+            outline: none;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 10px; /* Add rounded corners */
+        }
+        button:hover {
+            background-color: #0056a3;
+        }
+        
+        .shortcut-icons a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform and shadow effect */
+}
+
+.shortcut-icons a:hover {
+    transform: scale(1.2); /* Slightly enlarges the icon */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Adds a stronger shadow on hover */
+}
+
+.shortcut-icons img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease; /* Optional: Add fade effect on hover */
+}
+
+.shortcut-icons a:hover img {
+    opacity: 0.9; /* Slightly dim the icon image for a subtle effect */
+}
+
+.weather-container {
+    width: 100%; /* Full width of the page */
+    display: flex;
+    justify-content: center; /* Center the widget horizontally */
+    margin-bottom: 20px; /* Add spacing below the widget */
+}
+
+.weatherwidget-io {
+    width: 90%; /* Adjust width as needed */
+    max-width: 800px; /* Maximum width for large screens */
+    height: 150px; /* Set height to make it short */
+    border-radius: 10px; /* Add rounded corners */
+    overflow: hidden; /* Ensure no content spills outside */
+    text-align: center; /* Align content in the center */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow for styling */
+}
+
+
+        
+        
+    </style>
+</head>
+<body>
+    <!-- Date and Time Banner -->
+    <div class="datetime-banner" id="datetime-banner"></div>
+    
+    
+    
+
+    <!-- Shortcut Links with Icons -->
+    <div class="shortcut-icons">
+        <a href="https://google.com" target="_blank">
+            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google">
+        </a>
+        <a href="https://youtube.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+        </a>
+        <a href="https://reddit.com" target="_blank">
+            <img src="https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png" alt="Reddit">
+        </a>
+        <a href="https://chat.openai.com" target="_blank">
+            <img src="https://chat.openai.com/favicon.ico" alt="ChatGPT">
+        </a>
+        <a href="https://tv.youtube.com/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/YouTube_TV_logo.svg" alt="YouTube TV">
+        </a>
+        <a href="https://www.amazon.com/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg" alt="Amazon">
+        </a>
+        <a href="https://myapps.ynhh.org/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Yale_New_Haven_Hospital_Logo.png" alt="MyApps">
+        </a>
+    </div>
+    
+    <!-- Search Forms -->
+    <form action="https://www.google.com/search" method="get">
+        <input type="text" name="q" placeholder="Search Google">
+        <button type="submit">Search</button>
+    </form>
+
+    <form action="https://www.youtube.com/results" method="get">
+        <input type="text" name="search_query" placeholder="Search YouTube">
+        <button type="submit">Search</button>
+    </form>
+
+    <form action="https://www.reddit.com/search" method="get">
+        <input type="text" name="q" placeholder="Search Reddit">
+        <button type="submit">Search</button>
+    </form>
+    
+    <script>
+        // Array of background image URLs
+        const backgrounds = [
+            'https://motionbgs.com/media/7237/christmas-in-night-city.3840x2160.mp4',
+            'https://motionbgs.com/media/3981/cabin-covered-in-snow.3840x2160.mp4',
+            'https://motionbgs.com/media/7239/winter-christmas-forest.3840x2160.mp4',
+            'https://motionbgs.com/media/6751/winter-2.3840x2160.mp4',
+            'https://motionbgs.com/media/6769/winter-hogwarts.3840x2160.mp4',
+            'https://motionbgs.com/media/1041/snowfall-in-forest.3840x2160.mp4',
+            'https://motionbgs.com/media/3981/cabin-covered-in-snow.3840x2160.mp4',
+            'https://motionbgs.com/media/6753/snowy-town.3840x2160.mp4',
+            'https://motionbgs.com/media/6346/snowy-town-glow.3840x2160.mp4'
+        ];
+
+        // Select a random background image
+        const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+
+        // Set the background image
+        document.body.style.backgroundImage = `url(${randomBackground})`;
+
+        // Function to update the date and time
+        function updateDateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+            };
+            document.getElementById('datetime-banner').textContent = now.toLocaleString('en-US', options);
+        }
+
+        // Update date and time every second
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+
+
+    
+</body>
+</html>
