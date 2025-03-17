@@ -5,126 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <style>
-        /* General styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            height: 100vh;
+            height: 100vh; /* Full viewport height */
             color: white;
-            transition: background 0.5s ease;
+            transition: background 0.5s ease; /* Smooth background change */
         }
-
         .datetime-banner {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
             color: white;
             text-align: center;
             padding: 10px;
             font-size: 18px;
-            z-index: 1000;
+            z-index: 1000; /* Ensure it stays on top */
         }
-
+        
+        
         .shortcut-icons {
             display: flex;
-            flex-wrap: wrap;
             gap: 15px;
-            margin-bottom: 20px;
-            justify-content: center;
+            margin-bottom: 20px; /* Add space between the icons and the search fields */
         }
-
         .shortcut-icons a {
             display: inline-block;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             overflow: hidden;
             background-color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
         }
-
         .shortcut-icons a:hover {
             transform: scale(1.1);
         }
-
         .shortcut-icons img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
-
         form {
             margin: 10px;
-            width: 90%;
-            max-width: 400px;
         }
-
         input {
-            width: calc(100% - 80px);
             padding: 10px;
+            margin-right: 5px;
             font-size: 16px;
-            border-radius: 10px;
-            border: 1px solid #ccc;
+            border-radius: 10px; /* Add rounded corners */
+            border: 1px solid #ccc; /* Optional: border for the input field */
             outline: none;
         }
-
         button {
-            padding: 10px;
-            width: 70px;
+            padding: 10px 20px;
             background-color: #0078d4;
             color: white;
             border: none;
             cursor: pointer;
             font-size: 16px;
-            border-radius: 10px;
+            border-radius: 10px; /* Add rounded corners */
         }
-
         button:hover {
             background-color: #0056a3;
         }
+        
+        .shortcut-icons a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform and shadow effect */
+}
 
-        /* Responsive adjustments for smaller screens */
-        @media (max-width: 768px) {
-            .datetime-banner {
-                font-size: 16px;
-            }
+.shortcut-icons a:hover {
+    transform: scale(1.2); /* Slightly enlarges the icon */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5); /* Adds a stronger shadow on hover */
+}
 
-            .shortcut-icons a {
-                width: 50px;
-                height: 50px;
-            }
+.shortcut-icons img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease; /* Optional: Add fade effect on hover */
+}
 
-            input {
-                font-size: 14px;
-            }
+.shortcut-icons a:hover img {
+    opacity: 0.9; /* Slightly dim the icon image for a subtle effect */
+}
 
-            button {
-                font-size: 14px;
-            }
-        }
+
+        
     </style>
 </head>
 <body>
     <!-- Date and Time Banner -->
     <div class="datetime-banner" id="datetime-banner"></div>
+    
+   
 
     <!-- Shortcut Links with Icons -->
     <div class="shortcut-icons">
-        <a href="https://google.com" target="_blank">
-            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google">
+    
+        <a href="https://1337x.to" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/1337X_logo.svg" alt="1337x">
         </a>
-        <a href="https://youtube.com" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+        <a href="https://google.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
+        </a>
+        <a href="https://www.google.com/maps" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="GoogleMaps">
         </a>
         <a href="https://reddit.com" target="_blank">
             <img src="https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png" alt="Reddit">
@@ -132,17 +135,28 @@
         <a href="https://chat.openai.com" target="_blank">
             <img src="https://chat.openai.com/favicon.ico" alt="ChatGPT">
         </a>
+        <a href="https://youtube.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Logo_of_YouTube_%282015-2017%29.svg" alt="YouTube">
+        </a>
         <a href="https://tv.youtube.com/" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/YouTube_TV_logo.svg" alt="YouTube TV">
         </a>
         <a href="https://www.amazon.com/" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Amazon_2024.svg" alt="Amazon">
         </a>
-        <a href="https://myapps.ynhh.org/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Yale_New_Haven_Hospital_Logo.png" alt="MyApps">
+        <a href="https://www.northatlanticseed.com" target="_blank">
+            <img src="https://www.northatlanticseed.com/wp-content/uploads/2024/09/nasc-sm-logo.png" alt="NASC">
         </a>
-    </div>
+        <a href="https://myapps.ynhh.org/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Yale_New_Haven_Health.png" alt="MyApps">
+        </a>
+      
 
+        
+        
+
+    </div>
+    
     <!-- Search Forms -->
     <form action="https://www.google.com/search" method="get">
         <input type="text" name="q" placeholder="Search Google">
@@ -158,7 +172,7 @@
         <input type="text" name="q" placeholder="Search Reddit">
         <button type="submit">Search</button>
     </form>
-
+    
     <script>
         // Array of background image URLs
         const backgrounds = [
@@ -198,5 +212,8 @@
         updateDateTime();
         setInterval(updateDateTime, 1000);
     </script>
+
+    
 </body>
 </html>
+
